@@ -42,7 +42,7 @@ async function moduleProject4() {
       document.querySelector('#todayStats div:nth-child(1)')
         .textContent = `${data.current.temperature_min}°/${data.current.temperature_max}°`
       document.querySelector('#todayStats div:nth-child(2)')
-        .textContent = `Percipitation: ${data.current.percipitation_probability * 100}%`
+        .textContent = `Precipitation: ${data.current.precipitation_probability * 100}%`
       document.querySelector('#todayStats div:nth-child(3)')
         .textContent = `Humidity: ${data.current.humidity}%`
       document.querySelector('#todayStats div:nth-child(4)')
@@ -59,7 +59,7 @@ async function moduleProject4() {
         weekDay.textContent = getWeekDay(day.date) 
         apparent.textContent = descriptions.find(d => d[0] === day.weather_description)[1]
         minMax.textContent = `${day.temperature_min}°/${day.temperature_max}°`
-        precipit.textContent = `Precipitation: ${day.percipitation_probability * 100}%`
+        precipit.textContent = `Precipitation: ${day.precipitation_probability * 100}%`
       })
 
       document.querySelector('#location').firstElementChild.textContent = data.location.city
