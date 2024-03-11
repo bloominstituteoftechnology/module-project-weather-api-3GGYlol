@@ -32,6 +32,7 @@ async function moduleProject4() {
       document.querySelector('#weatherWidget').style.display = 'block'
       document.querySelector('.info').textContent = ''
       evt.target.removeAttribute('disabled')
+
       let { data } = res
 
       document.querySelector('#apparentTemp div:nth-child(2)')
@@ -55,15 +56,20 @@ async function moduleProject4() {
         let minMax = card.children[2]
         let precipit = card.children[3]
 
-        weekDay.textContent = day.date 
+        weekDay.textContent = getWeekDay(day.date) 
         apparent.textContent = descriptions.find(d => d[0] === day.weather_description)[1]
         minMax.textContent = `${day.temperature_min}°/${day.temperature_max}°`
         precipit.textContent = `Precipitation: ${day.percipitation_probability * 100}%`
       })
+
+      document.querySelector('#location').firstElementChild.textContent = data.location.city
     } catch (err) {
       console.log('😔 Promise rejected with an err.message --> ', err.message)
     }
   })
+  function getWeekDay(date) {
+    return date
+  }
 
   // 👆 WORK WORK ABOVE THIS LINE 👆
 
