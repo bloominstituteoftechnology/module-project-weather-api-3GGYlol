@@ -61,7 +61,7 @@ async function moduleProject4() {
         precipit.textContent = `Precipitation: ${day.percipitation_probability * 100}%`
       })
     } catch (err) {
-
+      console.log('😔 Promise rejected with an err.message --> ', err.message)
     }
   })
 
